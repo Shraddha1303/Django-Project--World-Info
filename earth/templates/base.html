@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MY World</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Keep It Clean</h2>
+  <p>Save environment for better green world</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Capital</th>
+        <th>Currency Symbol</th>
+        <th>Currency Name</th>
+        <th>Flag</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for i in info %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.capital}}</td>
+        <td>{{i.currencies.0.symbol}}</td>
+        <td>{{i.currencies.0.name}}</td>
+        <td> <img src = {{i.flag}} height="70" width="90" class="img-fluid" alt=" country flag"></td>
+        <td>{{i.population}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
